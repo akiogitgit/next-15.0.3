@@ -1,7 +1,15 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  experimental: {
+    // workerThreads: false,
+    // cpus: 1,
+    //   dynamicIO: true,
+    staleTimes: {
+      dynamic: 5,
+      static: 5,
+    },
+  },
+}
 
-export default nextConfig;
+export default nextConfig
