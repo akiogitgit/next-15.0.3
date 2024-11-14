@@ -1,4 +1,4 @@
 'use server'
-export const getDate = () => {
-  return new Date().toISOString()
+export async function getDate() {
+  return { data: 'now' }
 }

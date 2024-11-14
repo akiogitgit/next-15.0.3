@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { revalidatePathSA } from '../_server-actions/revalidatePath'
 import { revalidateTagSA } from '../_server-actions/revalidateTag'
+import { getDate } from '../_server-actions/date'
 
 const Page = () => {
   console.log('🚀 ~ revalidate-button')
@@ -15,6 +16,8 @@ const Page = () => {
 
   const revalidateTag = async (tag: string) => {
     const data = await revalidateTagSA(tag)
+    const date = await getDate()
+    console.log('🚀 ~ revalidateTag ~ date:', date)
     if (data.revalidated) {
       alert(`${tag}をrevalidateしました`)
     }
