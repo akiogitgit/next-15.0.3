@@ -16,7 +16,6 @@ export default function RootLayout({
     <html lang='en'>
       <body>
         {[
-          'sc1',
           'cc1',
           'sc2-build',
           'request-memoization',
