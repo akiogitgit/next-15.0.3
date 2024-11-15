@@ -5,9 +5,7 @@ const Page = () => {
   console.log('🚀 ~ revalidate-button')
 
   const revalidatePath = async (path: string) => {
-    const res = await fetch(
-      `http://localhost:3000/api/revalidatePath?path=/${path}`,
-    )
+    const res = await fetch(`/api/revalidatePath?path=/${path}`)
     const data = await res.json()
     if (data.revalidated) {
       alert(`${path}をrevalidateしました`)
@@ -15,9 +13,7 @@ const Page = () => {
   }
 
   const revalidateTag = async (tag: string) => {
-    const res = await fetch(
-      `http://localhost:3000/api/revalidateTag?tag=${tag}`,
-    )
+    const res = await fetch(`/api/revalidateTag?tag=${tag}`)
     const data = await res.json()
     if (data.revalidated) {
       alert(`${tag}をrevalidateしました`)
